@@ -2,10 +2,13 @@ const express = require("express");
 const db = require("./db");
 const Pizza = require("./models/pizzaModel");
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 const app = express();
 
 require('dotenv').config();
+app.use(cors());
+
 
 app.use(express.json());
 const pizzasRoute = require("./routes/pizzasRoute");
